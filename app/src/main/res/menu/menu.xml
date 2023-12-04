@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Implement menu for choosing different types of pizzas-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/women"
+        android:title="Women"
+        android:orderInCategory="1"/>
+    <item
+        android:id="@+id/men"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Men"
+        android:orderInCategory="2"/>
+    <item
+        android:id="@+id/ourLocations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Our Locations"
+        android:orderInCategory="3"/>
+    <item
+        android:id="@+id/fashionGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Fashion Guide"
+        android:orderInCategory="4"/>
+
+</menu>

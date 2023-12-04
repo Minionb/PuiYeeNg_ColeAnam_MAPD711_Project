@@ -1,3 +1,70 @@
 <resources>
     <string name="app_name">PuiYeeNg_ColeAnam_MAPD711_Project</string>
+
+    <!-- String array for months -->
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- String array for years -->
+    <string-array name="years">
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
+        <item>2030</item>
+        <item>2031</item>
+        <item>2032</item>
+        <item>2033</item>
+    </string-array>
+
+    <!-- String array for quantity -->
+    <string-array name="quantity">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+    <item>10</item>
+    <item>11</item>
+    <item>12</item>
+    <item>13</item>
+    <item>14</item>
+    <item>15</item>
+    <item>16</item>
+    <item>17</item>
+    <item>18</item>
+    <item>19</item>
+    <item>20</item>
+    </string-array>
+
+    <string name="header">Our Locations</string>
+    <string name="title">Select a city to find our store locations:</string>
+    <string name="MAPS_API_KEY">AIzaSyC6ZdVH_Yabp2XYVfBL7xM-TkFL9JnzAEw</string>
+
+    <!-- String array for cities -->
+    <string-array name="cities">
+        <item>Toronto Downtown</item>
+        <item>Yorkdale</item>
+        <item>Mississauga</item>
+        <item>Markham</item>
+    </string-array>
 </resources>

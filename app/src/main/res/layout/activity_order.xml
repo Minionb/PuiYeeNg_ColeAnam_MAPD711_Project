@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Use LinearLayout vertical orientation for the whole screen -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/customer_input_info_statement"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Please enter your information."
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="341dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/item"
+        android:layout_width="189dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Item Name"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:text="item name"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+</LinearLayout>
+    <!-- For Quantity Field Layout -->
+    <LinearLayout
+        android:layout_width="341dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Quantity"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <Spinner
+            android:id="@+id/quantitySpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/quantity" />
+
+    </LinearLayout>
+
+    <!-- For customerName Field Layout -->
+    <LinearLayout
+        android:layout_width="341dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/customerName"
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Customer Name"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/customerNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Your Name"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- For customerAddress Field Layout -->
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/customerAddress"
+            android:layout_width="192dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Address"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/customerAddressInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Address"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- For City Field Layout -->
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="192dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="City"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/cityInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="City"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- For Postal Code Field Layout -->
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/postalCode"
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Postal Code"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/postalCodeInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Postal Code"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- For Telephone Number Field Layout -->
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/telephoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Telephone Number"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/telephoneNumberInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="Telephone Number"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- For Credit Card Number Field Layout -->
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/creditCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Credit Card Number"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/creditCardNumberInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Credit Card Number"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!-- For cardType Field Layout, making use of radioGroup and radioButton -->
+    <LinearLayout
+        android:layout_width="342dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cardType"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Card Type"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <RadioGroup
+            android:id="@+id/cardTypeRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/visa"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="VISA" />
+
+            <RadioButton
+                android:id="@+id/master"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Master" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <!-- For creditCardExpiryDate Field Layout, making use of spinner -->
+    <LinearLayout
+        android:layout_width="341dp"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/creditCardExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Credit Card Expiry Date"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <Spinner
+            android:id="@+id/monthSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/months" />
+
+        <Spinner
+            android:id="@+id/yearSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/years" />
+
+
+    </LinearLayout>
+
+    <!-- Order Button to Fifth Activity -->
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="309dp"
+        android:layout_height="wrap_content"
+        android:text="Order" />
+
+</LinearLayout>

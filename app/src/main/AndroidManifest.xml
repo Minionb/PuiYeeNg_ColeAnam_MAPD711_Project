@@ -18,6 +18,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".OurLocationsActivity"
             android:exported="false" />
         <activity

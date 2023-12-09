@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 data class Customer(
     @PrimaryKey(autoGenerate = true)
     val customerId: Long = 0,
-    val username: String,
-    val password: String,
+    var username: String,
+    var password: String,
     var firstName: String,
     var lastName: String,
     var phoneNumber: String,

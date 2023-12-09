@@ -9,7 +9,7 @@ data class Customer(
     val customerId: Long = 0,
     val username: String,
     val password: String,
-    var firstname: String,
+    var firstName: String,
     var lastName: String,
     var phoneNumber: String,
     var address: String,

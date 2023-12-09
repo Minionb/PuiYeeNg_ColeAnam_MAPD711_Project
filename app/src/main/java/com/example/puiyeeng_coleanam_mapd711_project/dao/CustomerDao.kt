@@ -1,10 +1,6 @@
 package com.example.puiyeeng_coleanam_mapd711_project.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.puiyeeng_coleanam_mapd711_project.model.Customer
 
 @Dao
@@ -19,7 +15,7 @@ interface CustomerDao {
     fun getAllCustomers(): List<Customer>
 
     //get a customer by their username
-    @Query("SELECT * FROM customers WHERE userName = :username LIMIT 1")
+    @Query("SELECT * FROM customers WHERE username = :username LIMIT 1")
     suspend fun getCustomerByUsername(username: String): Customer?
 
     //get a customer by their customerId

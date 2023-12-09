@@ -16,6 +16,10 @@ class MenListingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenListingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.customerInfoFab.setOnClickListener{
+            startActivity(Intent(this@MenListingActivity, ProfileDetailsActivity::class.java))
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

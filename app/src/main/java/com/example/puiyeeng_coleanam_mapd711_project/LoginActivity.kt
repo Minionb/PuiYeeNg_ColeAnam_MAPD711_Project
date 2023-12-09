@@ -1,12 +1,13 @@
 package com.example.puiyeeng_coleanam_mapd711_project
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityLoginBinding
-import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityRegisterBinding
 import com.example.puiyeeng_coleanam_mapd711_project.db.CustomerDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,10 +17,14 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
+    lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPreferences = this.getSharedPreferences("SharedLoginPref", Context.MODE_PRIVATE)
 
         binding.buttonLogin.setOnClickListener {
             val usernameField = binding.editTextUsername.text.toString()
@@ -50,6 +55,8 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+                // pass cusotmer username to shared preference for later usage
+                sharedPreferences.edit().putString("customer_username", username).apply()
                 startActivity(Intent(this@LoginActivity, OurLocationsActivity::class.java))
             }
             else {

@@ -17,6 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
+        <service
+            android:name=".FashionGuideService"
+            android:enabled="true"
+            android:exported="true" />
         <activity
             android:name=".ProfileDetailsActivity"
             android:exported="false" />
@@ -37,6 +41,9 @@
             android:exported="false" />
         <activity
             android:name=".WomenListingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FashionGuideActivity"
             android:exported="false" />
 
         <meta-data

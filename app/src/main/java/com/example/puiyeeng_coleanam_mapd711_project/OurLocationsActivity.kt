@@ -38,7 +38,7 @@ class OurLocationsActivity : AppCompatActivity() {
                 true
             }
             R.id.fashionGuide -> {
-
+                startActivity(Intent(this, FashionGuideActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

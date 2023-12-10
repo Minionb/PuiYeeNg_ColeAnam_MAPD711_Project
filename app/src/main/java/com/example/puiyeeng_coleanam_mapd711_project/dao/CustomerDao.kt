@@ -22,11 +22,11 @@ interface CustomerDao {
     @Query("SELECT * FROM customers WHERE customerId = :customerId LIMIT 1")
     suspend fun getCustomerByCustomerId(customerId: Long): Customer?
 
-    //update user
+    //update customer
     @Update
     suspend fun updateCustomer(customer: Customer)
 
-    //delete user
+    //delete customer
     @Delete
     suspend fun deleteCustomer(customer: Customer)
 

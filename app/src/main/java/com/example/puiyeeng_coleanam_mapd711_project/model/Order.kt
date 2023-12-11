@@ -9,6 +9,7 @@ data class Order(
     val orderId: Long = 0,
     val customerId: Long,
     val productName: String,
+    val productPrice: Double,
     val orderDate: String,
     val quantity: Int,
     val totalPrice: Double

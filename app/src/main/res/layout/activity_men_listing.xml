@@ -159,7 +159,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="AirSense PANTS WOOL LIKE (ULTRA LIGHT)"
+        android:text="AirSense PANTS WOOL LIKE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toEndOf="@+id/imageView6"

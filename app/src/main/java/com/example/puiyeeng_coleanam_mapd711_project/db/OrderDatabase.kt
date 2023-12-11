@@ -19,7 +19,7 @@ abstract class OrderDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     OrderDatabase::class.java,
-                    "customer_db"
+                    "order_db"
                 ).build()
                 INSTANCE = instance
                 instance

@@ -1,7 +1,6 @@
 package com.example.puiyeeng_coleanam_mapd711_project.dao
 
 import androidx.room.*
-import com.example.puiyeeng_coleanam_mapd711_project.model.Customer
 import com.example.puiyeeng_coleanam_mapd711_project.model.Order
 
 @Dao

@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityMenListingBinding
-import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityWomenListingBinding
+
 
 class MenListingActivity : AppCompatActivity() {
 
@@ -30,18 +30,21 @@ class MenListingActivity : AppCompatActivity() {
         // Submit Men Sweater order
         binding.button1.setOnClickListener {
             editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
+            editor.putString("product_price", "59.90").apply()
             startActivity(Intent(this, OrderActivity::class.java))
         }
 
         // Submit Men Coat order
         binding.button2.setOnClickListener {
             editor.putString("product_name", "SEAMLESS DOWN COAT").apply()
+            editor.putString("product_price", "249.90").apply()
             startActivity(Intent(this, OrderActivity::class.java))
         }
 
         // Submit Men Pants order
         binding.button3.setOnClickListener {
-            editor.putString("product_name", "AirSense PANTS WOOL LIKE (ULTRA LIGHT)").apply()
+            editor.putString("product_name", "AirSense PANTS WOOL LIKE").apply()
+            editor.putString("product_price", "59.90").apply()
             startActivity(Intent(this, OrderActivity::class.java))
         }
 
@@ -75,3 +78,4 @@ class MenListingActivity : AppCompatActivity() {
         //return super.onOptionsItemSelected(item)
     }
 }
+

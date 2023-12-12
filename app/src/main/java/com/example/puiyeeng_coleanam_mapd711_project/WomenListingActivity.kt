@@ -28,21 +28,24 @@ class WomenListingActivity : AppCompatActivity() {
             startActivity(Intent(this@WomenListingActivity, ProfileDetailsActivity::class.java))
         }
 
-        // Submit Men Sweater order
+        // Submit Women Sweater order
         binding.button1.setOnClickListener {
             editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
+            editor.putString("product_price", "59.90").apply()
             startActivity(Intent(this, OrderActivity::class.java))
         }
 
-        // Submit Men Coat order
+        // Submit Women Coat order
         binding.button2.setOnClickListener {
-            editor.putString("product_name", "SEAMLESS DOWN COAT").apply()
+            editor.putString("product_name", "TRENCH COAT SPECIAL EDITION").apply()
+            editor.putString("product_price", "249.90").apply()
             startActivity(Intent(this, OrderActivity::class.java))
         }
 
-        // Submit Men Pants order
+        // Submit Women Pants order
         binding.button3.setOnClickListener {
-            editor.putString("product_name", "AirSense PANTS WOOL LIKE (ULTRA LIGHT)").apply()
+            editor.putString("product_name", "RIBBED LONG SLEEVE KNIT DRESS").apply()
+            editor.putString("product_price", "49.90").apply()
             startActivity(Intent(this, OrderActivity::class.java))
         }
     }

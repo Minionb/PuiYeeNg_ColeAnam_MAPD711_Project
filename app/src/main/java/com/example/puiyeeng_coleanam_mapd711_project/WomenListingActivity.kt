@@ -1,6 +1,8 @@
 package com.example.puiyeeng_coleanam_mapd711_project
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,14 +13,37 @@ import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityWomenLi
 class WomenListingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWomenListingBinding
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWomenListingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sharedPreferences = this.getSharedPreferences("SharedLoginPref", Context.MODE_PRIVATE)
+        var editor = sharedPreferences.edit()
+
+
         binding.customerInfoFab.setOnClickListener{
             startActivity(Intent(this@WomenListingActivity, ProfileDetailsActivity::class.java))
+        }
+
+        // Submit Men Sweater order
+        binding.button1.setOnClickListener {
+            editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
+            startActivity(Intent(this, OrderActivity::class.java))
+        }
+
+        // Submit Men Coat order
+        binding.button2.setOnClickListener {
+            editor.putString("product_name", "SEAMLESS DOWN COAT").apply()
+            startActivity(Intent(this, OrderActivity::class.java))
+        }
+
+        // Submit Men Pants order
+        binding.button3.setOnClickListener {
+            editor.putString("product_name", "AirSense PANTS WOOL LIKE (ULTRA LIGHT)").apply()
+            startActivity(Intent(this, OrderActivity::class.java))
         }
     }
 
@@ -42,7 +67,7 @@ class WomenListingActivity : AppCompatActivity() {
                 true
             }
             R.id.fashionGuide -> {
-
+                startActivity(Intent(this, FashionGuideActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

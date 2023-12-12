@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 // pass cusotmer username to shared preference for later usage
                 sharedPreferences.edit().putString("customer_username", username).apply()
-                startActivity(Intent(this@LoginActivity, OurLocationsActivity::class.java))
+                startActivity(Intent(this@LoginActivity, MenListingActivity::class.java))
             }
             else {
                 lifecycleScope.launch(Dispatchers.Main) {

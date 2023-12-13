@@ -22,7 +22,7 @@ interface OrderDao {
 
     // get all the orders by customerId
     @Query("SELECT * FROM orders WHERE customerId = :customerId")
-    fun getOrderListByCustomer(customerId: Int): List<Order>
+    fun getOrderListByCustomer(customerId: Long): List<Order>
 
     // get a order by their orderId
     @Query("SELECT * FROM orders WHERE orderId = :orderId LIMIT 1")

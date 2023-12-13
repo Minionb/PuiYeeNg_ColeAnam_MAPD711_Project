@@ -80,7 +80,7 @@ class EditCustomerActivity : AppCompatActivity() {
                 }
 
                 // store newPhoneNum to the updateFields, change the telephone number of user record to newPhoneNum
-                if (newPhoneNum != "") {
+                if (newPhoneNum != "" && newPhoneNum.length == 10) {
                     updateFields.add("Telephone Number: $newPhoneNum")
                     customer.phoneNumber = newPhoneNum
                 }
@@ -98,7 +98,7 @@ class EditCustomerActivity : AppCompatActivity() {
                 }
 
                 // store newPostalCode to the updateFields, change the Postal Code of user record to newPostalCode
-                if (newPostalCode != "") {
+                if (newPostalCode != "" && newPostalCode.length == 7) {
                     updateFields.add("Postal Code: $newPostalCode")
                     customer.postalCode = newPostalCode
                 }

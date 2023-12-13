@@ -26,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
 
         sharedPreferences = this.getSharedPreferences("SharedLoginPref", Context.MODE_PRIVATE)
 
+        sharedPreferences.edit().putString("customer_username", "").apply()
+
         binding.buttonLogin.setOnClickListener {
             val usernameField = binding.editTextUsername.text.toString()
             val passwordField = binding.editTextPassword.text.toString()

@@ -44,6 +44,33 @@ class RegisterActivity : AppCompatActivity() {
                         ).show()
                     }
                 }
+                else if(newUsername.isEmpty() || newPassword.isEmpty() || newFirstName.isEmpty() || newLastName.isEmpty() || newPhoneNum.isEmpty() || newAddress.isEmpty() || newCity.isEmpty() || newPostalCode.isEmpty()) {
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@RegisterActivity,
+                            "One or more fields are empty",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                else if(newPhoneNum.length != 10) {
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@RegisterActivity,
+                            "Phone number is invalid",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                else if(newPostalCode.length != 7) {
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@RegisterActivity,
+                            "Postal Code is invalid",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
                 else {
                     val newCustomer = Customer(username = newUsername, password = newPassword, firstName = newFirstName, lastName = newLastName, phoneNumber = newPhoneNum, address = newAddress, city = newCity, postalCode = newPostalCode)
                     customerDao.insertCustomer(newCustomer)

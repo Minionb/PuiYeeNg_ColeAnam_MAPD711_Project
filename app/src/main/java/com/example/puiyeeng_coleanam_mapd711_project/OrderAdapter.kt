@@ -29,6 +29,7 @@ class OrderAdapter(private val orders: List<Order>) : RecyclerView.Adapter<Order
         private val priceText: TextView = orderview.findViewById(R.id.priceText)
         private val orderDateText: TextView = orderview.findViewById(R.id.orderDateText)
         private val quantityText: TextView = orderview.findViewById(R.id.quantityText)
+        private val totalPriceText: TextView = orderview.findViewById(R.id.totalPriceText)
 
         @SuppressLint("SetTextI18n")
         fun bind(order: Order) {
@@ -36,6 +37,7 @@ class OrderAdapter(private val orders: List<Order>) : RecyclerView.Adapter<Order
             priceText.text = priceText.text.toString() + "$" + order.productPrice.toString()
             orderDateText.text = orderDateText.text.toString() + order.orderDate
             quantityText.text = quantityText.text.toString() + order.quantity.toString()
+            totalPriceText.text = totalPriceText.text.toString() + "$" + order.totalPrice.toString()
         }
     }
 }

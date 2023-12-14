@@ -45,23 +45,56 @@ class WomenListingActivity : AppCompatActivity() {
 
         // Submit Women Sweater order
         binding.button1.setOnClickListener {
-            editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
-            editor.putString("product_price", "59.90").apply()
-            startActivity(Intent(this, OrderActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@WomenListingActivity,
+                        "User must be logged in to order",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
+                editor.putString("product_price", "59.90").apply()
+                startActivity(Intent(this, OrderActivity::class.java))
+            }
         }
 
         // Submit Women Coat order
         binding.button2.setOnClickListener {
-            editor.putString("product_name", "TRENCH COAT SPECIAL EDITION").apply()
-            editor.putString("product_price", "249.90").apply()
-            startActivity(Intent(this, OrderActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@WomenListingActivity,
+                        "User must be logged in to order",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                editor.putString("product_name", "TRENCH COAT SPECIAL EDITION").apply()
+                editor.putString("product_price", "249.90").apply()
+                startActivity(Intent(this, OrderActivity::class.java))
+            }
         }
 
         // Submit Women Pants order
         binding.button3.setOnClickListener {
-            editor.putString("product_name", "RIBBED LONG SLEEVE KNIT DRESS").apply()
-            editor.putString("product_price", "49.90").apply()
-            startActivity(Intent(this, OrderActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@WomenListingActivity,
+                        "User must be logged in to order",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                editor.putString("product_name", "RIBBED LONG SLEEVE KNIT DRESS").apply()
+                editor.putString("product_price", "49.90").apply()
+                startActivity(Intent(this, OrderActivity::class.java))
+            }
         }
     }
 

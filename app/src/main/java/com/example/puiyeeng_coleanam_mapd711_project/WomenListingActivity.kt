@@ -7,8 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityMainBinding
 import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityWomenListingBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class WomenListingActivity : AppCompatActivity() {
 
@@ -22,10 +26,21 @@ class WomenListingActivity : AppCompatActivity() {
 
         sharedPreferences = this.getSharedPreferences("SharedLoginPref", Context.MODE_PRIVATE)
         var editor = sharedPreferences.edit()
-
+        val checkedinUsername = sharedPreferences.getString("customer_username", "") ?: ""
 
         binding.customerInfoFab.setOnClickListener{
-            startActivity(Intent(this@WomenListingActivity, ProfileDetailsActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@WomenListingActivity,
+                        "Please login first to access profile details",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                startActivity(Intent(this@WomenListingActivity, ProfileDetailsActivity::class.java))
+            }
         }
 
         // Submit Women Sweater order

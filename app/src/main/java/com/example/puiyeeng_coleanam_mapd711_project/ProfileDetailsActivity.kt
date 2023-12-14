@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,6 +50,18 @@ class ProfileDetailsActivity : AppCompatActivity() {
 
         binding.editProfile.setOnClickListener{
             startActivity(Intent(this@ProfileDetailsActivity, EditCustomerActivity::class.java))
+        }
+
+        binding.logoutButton.setOnClickListener{
+            sharedPreferences.edit().putString("customer_username", null).apply()
+            lifecycleScope.launch(Dispatchers.Main) {
+                Toast.makeText(
+                    this@ProfileDetailsActivity,
+                    "Logout successful",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            startActivity(Intent(this@ProfileDetailsActivity, MainActivity::class.java))
         }
     }
 

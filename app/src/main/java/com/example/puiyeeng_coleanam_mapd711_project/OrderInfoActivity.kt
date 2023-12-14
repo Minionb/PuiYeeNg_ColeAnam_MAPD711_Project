@@ -1,6 +1,7 @@
 package com.example.puiyeeng_coleanam_mapd711_project
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -59,6 +60,10 @@ class OrderInfoActivity : AppCompatActivity() {
             binding.orderDateLabel.text = order?.orderDate
             binding.quantityLabel.text = order?.quantity.toString()
             binding.totalPriceLabel.text = order?.totalPrice.toString()
+
+            binding.goBackbutton.setOnClickListener {
+                startActivity(Intent(this@OrderInfoActivity, WomenListingActivity::class.java))
+            }
         }
 
     }

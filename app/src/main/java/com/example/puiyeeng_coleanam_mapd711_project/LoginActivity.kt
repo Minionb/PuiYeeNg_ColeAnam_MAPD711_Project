@@ -26,8 +26,6 @@ class LoginActivity : AppCompatActivity() {
 
         sharedPreferences = this.getSharedPreferences("SharedLoginPref", Context.MODE_PRIVATE)
 
-        sharedPreferences.edit().putString("customer_username", "").apply()
-
         binding.buttonLogin.setOnClickListener {
             val usernameField = binding.editTextUsername.text.toString()
             val passwordField = binding.editTextPassword.text.toString()
@@ -59,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 // pass cusotmer username to shared preference for later usage
                 sharedPreferences.edit().putString("customer_username", username).apply()
-                startActivity(Intent(this@LoginActivity, MenListingActivity::class.java))
+                startActivity(Intent(this@LoginActivity, FashionGuideActivity::class.java))
             }
             else {
                 lifecycleScope.launch(Dispatchers.Main) {

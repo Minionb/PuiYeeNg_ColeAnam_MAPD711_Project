@@ -7,7 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityMenListingBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class MenListingActivity : AppCompatActivity() {
@@ -22,9 +26,21 @@ class MenListingActivity : AppCompatActivity() {
 
         sharedPreferences = this.getSharedPreferences("SharedLoginPref", Context.MODE_PRIVATE)
         var editor = sharedPreferences.edit()
+        val checkedinUsername = sharedPreferences.getString("customer_username", "") ?: ""
 
         binding.customerInfoFab.setOnClickListener{
-            startActivity(Intent(this@MenListingActivity, ProfileDetailsActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@MenListingActivity,
+                        "Please login first to access profile details",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                startActivity(Intent(this@MenListingActivity, ProfileDetailsActivity::class.java))
+            }
         }
 
         // Submit Men Sweater order

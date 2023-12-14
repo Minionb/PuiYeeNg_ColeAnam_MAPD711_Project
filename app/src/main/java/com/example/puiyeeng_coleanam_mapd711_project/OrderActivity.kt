@@ -6,6 +6,9 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.RadioGroup
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.puiyeeng_coleanam_mapd711_project.databinding.ActivityOrderBinding
 import com.example.puiyeeng_coleanam_mapd711_project.db.CustomerDatabase
 import com.example.puiyeeng_coleanam_mapd711_project.db.OrderDatabase
@@ -57,22 +60,70 @@ class OrderActivity : AppCompatActivity() {
             binding.telephoneNumberInput.text = customer?.phoneNumber
         }
 
-
         binding.orderButton.setOnClickListener() {
             val quantityString = binding.quantitySpinner.getSelectedItem().toString()
             quantity = quantityString.toInt()
 
             val totalPrice = quantity * productPrice
 
-            customer?.let {
-                makeOrder(
-                    it.customerId,
-                    productName,
-                    productPrice,
-                    quantity,
-                    totalPrice
-                )
-                startActivity(Intent(this, OrderInfoActivity::class.java))
+            val radioGroup: RadioGroup = binding.cardTypeRadioGroup
+            val selectedRadioButtonId: Int = radioGroup.checkedRadioButtonId
+
+            val creditCardNum = binding.creditCardNumberInput
+            val cvcNum = binding.cvcNumberInput
+            val cardExprDateM = binding.monthSpinner.selectedItem.toString().toInt()
+            val cardExprDateY = binding.yearSpinner.selectedItem.toString().toInt()
+            val todayDateY = getCurrentDate().substring(0, 4).toInt()
+            val todayDateM = getCurrentDate().substring(5, 7).toInt()
+
+            // Payment input validation
+            if(creditCardNum.text.length != 16) {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@OrderActivity,
+                        "Credit Card Number is incorrect",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else if(selectedRadioButtonId == -1) {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@OrderActivity,
+                        "Card Type not selected",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else if((cardExprDateY < todayDateY) || (cardExprDateY == todayDateY && cardExprDateM <= todayDateM)) {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@OrderActivity,
+                        "Card Expiry Date is invalid",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else if(cvcNum.text.length != 3) {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@OrderActivity,
+                        "CVC Number is incorrect",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                customer?.let {
+                    makeOrder(
+                        it.customerId,
+                        productName,
+                        productPrice,
+                        quantity,
+                        totalPrice
+                    )
+                    startActivity(Intent(this, OrderInfoActivity::class.java))
+                }
             }
         }
     }

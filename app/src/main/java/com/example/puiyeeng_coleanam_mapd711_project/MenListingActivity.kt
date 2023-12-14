@@ -45,25 +45,57 @@ class MenListingActivity : AppCompatActivity() {
 
         // Submit Men Sweater order
         binding.button1.setOnClickListener {
-            editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
-            editor.putString("product_price", "59.90").apply()
-            startActivity(Intent(this, OrderActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@MenListingActivity,
+                        "User must be logged in to order",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                editor.putString("product_name", "LONG SLEEVE CREW NECK SWEATER").apply()
+                editor.putString("product_price", "59.90").apply()
+                startActivity(Intent(this, OrderActivity::class.java))
+            }
         }
 
         // Submit Men Coat order
         binding.button2.setOnClickListener {
-            editor.putString("product_name", "SEAMLESS DOWN COAT").apply()
-            editor.putString("product_price", "249.90").apply()
-            startActivity(Intent(this, OrderActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@MenListingActivity,
+                        "User must be logged in to order",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                editor.putString("product_name", "SEAMLESS DOWN COAT").apply()
+                editor.putString("product_price", "249.90").apply()
+                startActivity(Intent(this, OrderActivity::class.java))
+            }
         }
 
         // Submit Men Pants order
         binding.button3.setOnClickListener {
-            editor.putString("product_name", "AirSense PANTS WOOL LIKE").apply()
-            editor.putString("product_price", "59.90").apply()
-            startActivity(Intent(this, OrderActivity::class.java))
+            if (checkedinUsername == "") {
+                lifecycleScope.launch(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@MenListingActivity,
+                        "User must be logged in to order",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            else {
+                editor.putString("product_name", "AirSense PANTS WOOL LIKE").apply()
+                editor.putString("product_price", "59.90").apply()
+                startActivity(Intent(this, OrderActivity::class.java))
+            }
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

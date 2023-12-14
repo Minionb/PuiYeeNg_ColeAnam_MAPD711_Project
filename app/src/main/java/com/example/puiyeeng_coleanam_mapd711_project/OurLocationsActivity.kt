@@ -160,11 +160,13 @@ class OurLocationsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
         mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
 
+        mMap.setInfoWindowAdapter(CustomInfoWindowAdapter(this))
+
         // Add a marker in Toronto and move the camera
-        val toronto = LatLng(43.651070, -79.347015)
-        mMap.addMarker(MarkerOptions().position(toronto).title("Toronto"))
+        val yourLocation = LatLng(43.7852, -79.2282)
+        mMap.addMarker(MarkerOptions().position(yourLocation).title("Centennial College").snippet("941 Progress Ave " + "\n" + "43.7852 " + "-79.2282" + "\n" + "Opening Hours: 09:00 a.m.– 04:30 p.m."))
             ?.let { it1 -> markerList.add(it1) }
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(toronto, 10f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(yourLocation, 10f))
 
     }
 

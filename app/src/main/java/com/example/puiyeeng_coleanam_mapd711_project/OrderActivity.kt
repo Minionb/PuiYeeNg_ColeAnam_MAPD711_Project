@@ -47,13 +47,10 @@ class OrderActivity : AppCompatActivity() {
             val customerDao = CustomerDatabase.getDatabaseInstance(applicationContext).customerDao()
             println(checkedinUsername)
             customer = customerDao.getCustomerByUsername(checkedinUsername)
-            println("Hi")
-            println(customer)
-            println("HiHi")
 
             binding.customerNameInput.text = customer?.firstName + " " + customer?.lastName
             binding.productName.text = productName
-            binding.productPriceInput.text = productPriceString
+            binding.productPriceInput.text = "$" + productPriceString
             binding.customerAddressInput.text = customer?.address
             binding.cityInput.text = customer?.city
             binding.postalCodeInput.text = customer?.postalCode

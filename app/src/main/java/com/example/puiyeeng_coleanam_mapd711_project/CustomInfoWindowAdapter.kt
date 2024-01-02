@@ -37,11 +37,18 @@ class CustomInfoWindowAdapter(private val mContext: Context) : GoogleMap.InfoWin
         }
 
         // Marker image
-        var image = R.drawable.fashion_store_logo
+        if (title == "Centennial College") {
+            var image = R.drawable.centennial_college_logo
+            val tvImage = view.findViewById<ImageView>(R.id.storeImage)
+            tvImage.setImageResource(image)
+        }
+        else {
 
-        val tvImage = view.findViewById<ImageView>(R.id.storeImage)
-        tvImage.setImageResource(image)
+            var image = R.drawable.fashion_store_logo
 
+            val tvImage = view.findViewById<ImageView>(R.id.storeImage)
+            tvImage.setImageResource(image)
+        }
     }
 
     override fun getInfoContents(marker: Marker): View? {
